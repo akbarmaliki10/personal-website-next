@@ -10,7 +10,7 @@ export const loungeItems: LoungeItem[] = [
   {
     id: "games",
     category: "Playing Games",
-    subtitle: "Downtime adventures",
+    subtitle: "",
     iconName: "Gamepad2",
     images: [
       { id: "Valorant", name: "Valorant", url: "/images/jett.gif" },

@@ -13,7 +13,7 @@ export default function Home() {
         <div className={styles.logo}>
           <strong>Akbar Maliki</strong>
         </div>
-        
+
         <nav className={styles.nav}>
           <a href="#experience">Experience</a>
           <a href="#projects">Projects</a>
@@ -24,7 +24,7 @@ export default function Home() {
           <ThemeToggle />
         </div>
       </header>
-      
+
       <main className={styles.main}>
         <div className={styles.heroGrid}>
           {/* Left Column */}
@@ -52,11 +52,11 @@ export default function Home() {
 
       <footer className={styles.footer}>
         <div className={styles.footerContent}>
-          <p>© 2026 AKBAR MALIKI - HUMANISTIC ENGINEER</p>
+          <p>© 2026 AKBAR MALIKI - SOFTWARE ENGINEER</p>
           <div className={styles.footerLinks}>
-            <a href="#">GITHUB</a>
-            <a href="#">LINKEDIN</a>
-            <a href="#">EMAIL</a>
+            <a href="https://github.com/akbarmaliki10" target="_blank" rel="noopener noreferrer">GITHUB</a>
+            <a href="https://www.linkedin.com/in/akbar-maliki/" target="_blank" rel="noopener noreferrer">LINKEDIN</a>
+            <a href="mailto:akbar.maliki.work@gmail.com">EMAIL</a>
           </div>
         </div>
       </footer>
