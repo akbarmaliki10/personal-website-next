@@ -1,66 +1,65 @@
-import Image from "next/image";
+import { ThemeToggle } from "@/components/ui/ThemeToggle";
+import { Profile } from "@/features/profile/Profile";
+import { StackMarquee } from "@/features/stack/StackMarquee";
+import { ExperienceTimeline } from "@/features/experience/Experience";
+import { Projects } from "@/features/projects/Projects";
+import { Lounge } from "@/features/lounge/Lounge";
 import styles from "./page.module.css";
 
 export default function Home() {
   return (
     <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.tsx file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+      <header className={styles.header}>
+        <div className={styles.logo}>
+          <strong>Akbar Maliki</strong>
         </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+        
+        <nav className={styles.nav}>
+          <a href="#experience">Experience</a>
+          <a href="#projects">Projects</a>
+          <a href="#lounge">Lounge</a>
+        </nav>
+
+        <div className={styles.actions}>
+          <ThemeToggle />
+        </div>
+      </header>
+      
+      <main className={styles.main}>
+        <div className={styles.heroGrid}>
+          {/* Left Column */}
+          <div className={styles.leftCol}>
+            <div className={styles.stickyContent}>
+              <Profile />
+              <div id="experience" className={styles.experienceSection}>
+                <ExperienceTimeline />
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column */}
+          <div className={styles.rightCol} id="projects">
+            <StackMarquee />
+            <Projects />
+          </div>
+        </div>
+
+        {/* Full width lounge section */}
+        <div className={styles.loungeSection}>
+          <Lounge />
         </div>
       </main>
+
+      <footer className={styles.footer}>
+        <div className={styles.footerContent}>
+          <p>© 2026 AKBAR MALIKI - HUMANISTIC ENGINEER</p>
+          <div className={styles.footerLinks}>
+            <a href="#">GITHUB</a>
+            <a href="#">LINKEDIN</a>
+            <a href="#">EMAIL</a>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }

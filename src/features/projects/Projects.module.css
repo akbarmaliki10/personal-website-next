@@ -1,0 +1,132 @@
+.container {
+  width: 100%;
+}
+
+.sectionTitle {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.card {
+  border-radius: 16px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+}
+
+.featured {
+  grid-column: 1 / -1;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: stretch;
+}
+
+.cardContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.category {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--accent-blue);
+  text-transform: uppercase;
+}
+
+.badge {
+  background-color: #FCD34D;
+  color: #92400E;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+}
+
+[data-theme='dark'] .badge {
+  background-color: rgba(245, 158, 11, 0.2);
+  color: #FCD34D;
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  flex: 1;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.6rem;
+  background-color: var(--accent-blue-hover);
+  color: var(--accent-blue);
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.codeWrapper {
+  flex: 1;
+  background-color: #111827;
+  border-radius: 8px;
+  padding: 1.5rem;
+  overflow: hidden;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.8rem;
+  color: #A78BFA;
+}
+
+.codeBlock {
+  margin: 0;
+  white-space: pre-wrap;
+  line-height: 1.6;
+}
+
+@media (max-width: 1024px) {
+  .featured {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .card {
+    grid-column: 1 / -1;
+  }
+}
