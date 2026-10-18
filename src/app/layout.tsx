@@ -1,17 +1,18 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import { ThemeProvider } from "@/components/ThemeProvider";
-import { ThemeToggle } from "@/components/ui/ThemeToggle";
+import { LanguageProvider } from "@/components/LanguageProvider";
 import "./globals.css";
 
-const inter = Inter({
+const modernFont = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-sans",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
   title: "Akbar Maliki",
-  description: "Backend Software Engineer Portfolio",
+  description: "Software Engineer II specializing in backend and distributed systems.",
 };
 
 export default function RootLayout({
@@ -21,14 +22,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable}`} suppressHydrationWarning>
+      <body className={`${modernFont.variable}`} suppressHydrationWarning>
         <ThemeProvider
           attribute="data-theme"
           defaultTheme="system"
           enableSystem
-          disableTransitionOnChange
         >
-          {children}
+          <LanguageProvider>{children}</LanguageProvider>
         </ThemeProvider>
       </body>
     </html>

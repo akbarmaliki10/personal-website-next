@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { Gamepad2, BookOpen } from "lucide-react";
 import { loungeItems } from "@/data/lounge";
+import { useLanguage } from "@/components/LanguageProvider";
 import styles from "./Lounge.module.css";
 
 const iconMap: Record<string, React.ReactNode> = {
@@ -11,17 +12,18 @@ const iconMap: Record<string, React.ReactNode> = {
 };
 
 export function Lounge() {
+  const { t } = useLanguage();
   return (
     <div className={styles.container} id="lounge">
-      <h2 className={styles.sectionTitle}>The Lounge</h2>
+      <h2 className={styles.sectionTitle}>{t.lounge.title}</h2>
       
       <div className={styles.grid}>
         {loungeItems.map((item, index) => (
           <div key={item.id} className={`${styles.itemGroup} ${index % 2 !== 0 ? styles.reverse : ''}`}>
             <div className={styles.textContent}>
               {iconMap[item.iconName]}
-              <h3 className={styles.category}>{item.category}</h3>
-              <p className={styles.subtitle}>{item.subtitle}</p>
+              <h3 className={styles.category}>{t.lounge.items[item.id].category}</h3>
+              <p className={styles.subtitle}>{t.lounge.items[item.id].subtitle}</p>
             </div>
             
             <div className={styles.imageGrid}>

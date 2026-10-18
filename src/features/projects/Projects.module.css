@@ -17,20 +17,34 @@
   gap: 1.5rem;
 }
 
+/* Apple Liquid Glass Card */
 .card {
-  border-radius: 16px;
-  padding: 2rem;
+  position: relative;
+  border-radius: 20px;
+  padding: 2.25rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border: 1px solid var(--border-color);
+  background: var(--glass-card-bg);
+  border: 1px solid var(--glass-card-border);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  box-shadow: var(--glass-card-shadow);
   overflow: hidden;
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1),
+              border-color 0.3s ease,
+              box-shadow 0.3s ease;
+}
+
+.card:hover {
+  border-color: var(--glass-card-hover-border);
+  box-shadow: var(--glass-card-hover-shadow);
 }
 
 .featured {
   grid-column: 1 / -1;
   flex-direction: row;
-  gap: 2rem;
+  gap: 2.5rem;
   align-items: stretch;
 }
 
@@ -55,32 +69,40 @@
   text-transform: uppercase;
 }
 
+/* Glass Badge */
 .badge {
-  background-color: #FCD34D;
-  color: #92400E;
+  background: rgba(245, 158, 11, 0.15);
+  color: #D97706;
   font-size: 0.65rem;
   font-weight: 700;
-  padding: 0.2rem 0.5rem;
-  border-radius: 4px;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.6);
 }
 
 [data-theme='dark'] .badge {
-  background-color: rgba(245, 158, 11, 0.2);
-  color: #FCD34D;
+  background: rgba(245, 158, 11, 0.18);
+  color: #FBBF24;
+  border-color: rgba(245, 158, 11, 0.35);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.12);
 }
 
 .title {
-  font-size: 1.25rem;
+  font-size: 1.35rem;
   font-weight: 700;
   margin-bottom: 1rem;
   color: var(--text-primary);
+  letter-spacing: -0.3px;
 }
 
 .description {
   font-size: 0.95rem;
-  line-height: 1.6;
+  line-height: 1.65;
   color: var(--text-secondary);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.75rem;
   flex: 1;
 }
 
@@ -90,24 +112,39 @@
   gap: 0.5rem;
 }
 
+/* Frosted Glass Tags */
 .tag {
-  font-size: 0.75rem;
-  padding: 0.25rem 0.6rem;
-  background-color: var(--accent-blue-hover);
+  font-size: 0.72rem;
+  padding: 0.25rem 0.65rem;
+  background: var(--accent-blue-hover);
   color: var(--accent-blue);
-  border-radius: 4px;
-  font-weight: 500;
+  border: 1px solid rgba(37, 99, 235, 0.15);
+  border-radius: 999px;
+  font-weight: 600;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.5);
 }
 
+[data-theme='dark'] .tag {
+  border-color: rgba(0, 163, 255, 0.25);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.1);
+}
+
+/* Frosted Code Terminal */
 .codeWrapper {
   flex: 1;
-  background-color: #111827;
-  border-radius: 8px;
+  background: rgba(15, 23, 42, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
   padding: 1.5rem;
   overflow: hidden;
   font-family: var(--font-geist-mono), monospace;
   font-size: 0.8rem;
-  color: #A78BFA;
+  color: #C4B5FD;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2), inset 0 1px 1px rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 .codeBlock {
@@ -128,5 +165,6 @@
   }
   .card {
     grid-column: 1 / -1;
+    padding: 1.5rem;
   }
 }

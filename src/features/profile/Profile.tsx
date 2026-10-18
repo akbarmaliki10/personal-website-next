@@ -1,9 +1,14 @@
+"use client";
+
 import Image from "next/image";
 import { Code2, User, Mail, GraduationCap } from "lucide-react";
 import { profileData } from "@/data/profile";
+import { useLanguage } from "@/components/LanguageProvider";
 import styles from "./Profile.module.css";
 
 export function Profile() {
+  const { t } = useLanguage();
+
   return (
     <div className={styles.profileContainer}>
       <div className={styles.imageWrapper}>
@@ -19,9 +24,9 @@ export function Profile() {
 
       <h1 className={styles.name}>{profileData.name}</h1>
       <p className={styles.bio}>
-        {profileData.bio}
+        {t.profile.bio}
         <br /><br />
-        <span className={styles.highlight}>{profileData.highlight}</span>
+        <span className={styles.highlight}>{t.profile.highlight}</span>
       </p>
 
       <div className={styles.socials}>
@@ -38,7 +43,7 @@ export function Profile() {
 
       <div className={styles.education}>
         <GraduationCap size={16} className={styles.eduIcon} />
-        <span>{profileData.education}</span>
+        <span>{t.profile.education}</span>
       </div>
     </div>
   );

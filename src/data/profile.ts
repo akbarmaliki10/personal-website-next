@@ -1,11 +1,10 @@
+/**
+ * Non-translatable profile data. Localized text (role, bio, highlight,
+ * education) lives in `@/i18n/translations`.
+ */
 export interface ProfileData {
   name: string;
-  role: string;
-  company: string;
-  bio: string;
-  highlight: string;
   imageUrl: string;
-  education: string;
   socials: {
     github: string;
     linkedin: string;
@@ -15,12 +14,7 @@ export interface ProfileData {
 
 export const profileData: ProfileData = {
   name: "Akbar Maliki",
-  role: "Backend Software Engineer",
-  company: "Hypefast",
-  bio: "Backend Software Engineer at Hypefast, specializing in high-performance APIs and distributed systems.",
-  highlight: "Engineering Scalable Systems. Reducing Latency.",
   imageUrl: "/images/profile.png",
-  education: "Bachelor of Computer Science from Universitas Indonesia",
   socials: {
     github: "https://github.com/akbarmaliki10",
     linkedin: "https://www.linkedin.com/in/akbar-maliki/",

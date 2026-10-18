@@ -7,9 +7,12 @@ export interface StackItem {
 export const stackItems: StackItem[] = [
   { id: "gcp", name: "Google Cloud Platform", iconName: "Cloud" },
   { id: "go", name: "Go", iconName: "Code2" }, // Fallback icons
+  { id: "typescript", name: "TypeScript", iconName: "Code2" },
   { id: "python", name: "Python", iconName: "Terminal" },
+  { id: "node", name: "Node.js", iconName: "Terminal" },
   { id: "postgres", name: "PostgreSQL", iconName: "Database" },
   { id: "kafka", name: "Kafka", iconName: "Network" },
   { id: "docker", name: "Docker", iconName: "Box" },
   { id: "k8s", name: "Kubernetes", iconName: "Cpu" },
+  { id: "terraform", name: "Terraform", iconName: "Box" },
 ];

@@ -1,9 +1,10 @@
 "use client";
 
 import { useRef } from "react";
-import { motion, useAnimationFrame, useMotionValue, useTransform } from "framer-motion";
+import { motion, useAnimationFrame, useMotionValue, useTransform, PanInfo } from "framer-motion";
 import { Cloud, Code2, Terminal, Database, Network, Box, Cpu } from "lucide-react";
 import { stackItems } from "@/data/stack";
+import { useLanguage } from "@/components/LanguageProvider";
 import styles from "./StackMarquee.module.css";
 
 const iconMap: Record<string, React.ReactNode> = {
@@ -23,6 +24,7 @@ const wrap = (min: number, max: number, v: number) => {
 };
 
 export function StackMarquee() {
+  const { t } = useLanguage();
   const baseX = useMotionValue(0);
   const containerRef = useRef<HTMLDivElement>(null);
   
@@ -35,11 +37,11 @@ export function StackMarquee() {
 
   useAnimationFrame((t, delta) => {
     // Scroll speed: 1.5% of container per second (slower)
-    let moveBy = directionFactor.current * 1.5 * (delta / 1000);
+    const moveBy = directionFactor.current * 1.5 * (delta / 1000);
     baseX.set(baseX.get() + moveBy);
   });
 
-  const handlePan = (e: any, info: any) => {
+  const handlePan = (_event: PointerEvent, info: PanInfo) => {
     if (containerRef.current) {
       const fullWidth = containerRef.current.scrollWidth;
       const deltaPercent = (info.delta.x / fullWidth) * 100;
@@ -49,7 +51,7 @@ export function StackMarquee() {
 
   return (
     <div className={styles.container}>
-      <h3 className={styles.title}>TECHNICAL STACK</h3>
+      <h3 className={styles.title}>{t.stackTitle}</h3>
       <div className={styles.marqueeWrapper}>
         <motion.div
           ref={containerRef}
