@@ -1,45 +1,37 @@
 :root {
-  --bg-primary: #FDF9F1;
-  --bg-card: #FFFFFF;
-  --text-primary: #1A1A1A;
-  --text-secondary: #6B7280;
-  --accent-blue: #2563EB;
-  --accent-blue-hover: rgba(37, 99, 235, 0.1);
-  --border-color: #E5E7EB;
-  --btn-text: #FFFFFF;
-  --glass-bg: rgba(255, 255, 255, 0.35);
-  --glass-border: rgba(255, 255, 255, 0.7);
-  --glass-edge: rgba(0, 0, 0, 0.06);
-  --glass-shadow: 0 8px 24px rgba(31, 38, 135, 0.14), 0 1px 3px rgba(0, 0, 0, 0.06);
-  --glass-thumb: rgba(255, 255, 255, 0.75);
-  --glass-thumb-text: #1A1A1A;
-  --glass-card-bg: rgba(255, 255, 255, 0.65);
-  --glass-card-border: rgba(255, 255, 255, 0.85);
-  --glass-card-shadow: 0 12px 32px -4px rgba(0, 0, 0, 0.06), 0 4px 12px -2px rgba(0, 0, 0, 0.03), inset 0 1px 2px rgba(255, 255, 255, 0.95), inset 0 -1px 2px rgba(0, 0, 0, 0.04);
-  --glass-card-hover-border: rgba(37, 99, 235, 0.35);
-  --glass-card-hover-shadow: 0 20px 40px -8px rgba(37, 99, 235, 0.12), 0 8px 20px -4px rgba(0, 0, 0, 0.05), inset 0 1px 2px rgba(255, 255, 255, 1);
+  /* Newspaper Morning Edition (Light) */
+  --bg-primary: #F5F1E8;
+  --bg-card: #FAF8F3;
+  --bg-contrast: #ECE6D8;
+  --text-primary: #121212;
+  --text-secondary: #48453E;
+  --text-muted: #736F65;
+  --accent-red: #8B1E1E;
+  --accent-blue: #1E3A8A;
+  --accent-blue-hover: rgba(30, 58, 138, 0.08);
+  --border-color: #D2CBB9;
+  --border-ink: #121212;
+  --news-ticker-bg: #EAE3D2;
+  --news-stamp-bg: rgba(139, 30, 30, 0.08);
+  --news-stamp-border: #8B1E1E;
 }
 
 [data-theme='dark'] {
-  --bg-primary: #0F1115;
-  --bg-card: #1C1F26;
-  --text-primary: #F3F4F6;
-  --text-secondary: #9CA3AF;
-  --accent-blue: #00A3FF;
-  --accent-blue-hover: rgba(0, 163, 255, 0.15);
-  --border-color: #2D3748;
-  --btn-text: #1A1A1A;
-  --glass-bg: rgba(255, 255, 255, 0.07);
-  --glass-border: rgba(255, 255, 255, 0.22);
-  --glass-edge: rgba(0, 0, 0, 0.35);
-  --glass-shadow: 0 8px 28px rgba(0, 0, 0, 0.45), 0 1px 3px rgba(0, 0, 0, 0.4);
-  --glass-thumb: rgba(255, 255, 255, 0.22);
-  --glass-thumb-text: #FFFFFF;
-  --glass-card-bg: rgba(255, 255, 255, 0.04);
-  --glass-card-border: rgba(255, 255, 255, 0.12);
-  --glass-card-shadow: 0 16px 36px -4px rgba(0, 0, 0, 0.5), 0 4px 12px rgba(0, 0, 0, 0.3), inset 0 1px 1.5px rgba(255, 255, 255, 0.16), inset 0 -1px 2px rgba(0, 0, 0, 0.45);
-  --glass-card-hover-border: rgba(0, 163, 255, 0.4);
-  --glass-card-hover-shadow: 0 24px 48px -8px rgba(0, 0, 0, 0.6), 0 0 28px -4px rgba(0, 163, 255, 0.22), inset 0 1px 2px rgba(255, 255, 255, 0.3);
+  /* Newspaper Midnight Edition (Dark) */
+  --bg-primary: #121316;
+  --bg-card: #191B1F;
+  --bg-contrast: #22252B;
+  --text-primary: #EFECE6;
+  --text-secondary: #B0ACA2;
+  --text-muted: #79766E;
+  --accent-red: #E05A47;
+  --accent-blue: #60A5FA;
+  --accent-blue-hover: rgba(96, 165, 250, 0.12);
+  --border-color: #2F3238;
+  --border-ink: #EFECE6;
+  --news-ticker-bg: #1F2228;
+  --news-stamp-bg: rgba(224, 90, 71, 0.15);
+  --news-stamp-border: #E05A47;
 }
 
 * {
@@ -48,11 +40,10 @@
   margin: 0;
 }
 
-/* Fade colors smoothly when switching light/dark (component-level transitions override this) */
 *,
 *::before,
 *::after {
-  transition: background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease, fill 0.35s ease, stroke 0.35s ease;
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
 }
 
 html {
@@ -62,9 +53,29 @@ html {
 body {
   background-color: var(--bg-primary);
   color: var(--text-primary);
-  /* Modern, widely-used clean tech typeface (Plus Jakarta Sans) */
-  font-family: var(--font-sans), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; 
-  transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: var(--font-body), "Georgia", "Yu Mincho", "Hiragino Mincho ProN", serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Authentic newsprint paper texture overlay */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 999;
+  opacity: 0.035;
+  background-image: radial-gradient(var(--text-primary) 0.75px, transparent 0.75px);
+  background-size: 4px 4px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display), "Times New Roman", "Yu Mincho", serif;
+  font-weight: 700;
+  color: var(--text-primary);
   letter-spacing: -0.01em;
 }
 

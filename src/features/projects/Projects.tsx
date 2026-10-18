@@ -1,52 +1,72 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { projects } from "@/data/projects";
 import { useLanguage } from "@/components/LanguageProvider";
 import styles from "./Projects.module.css";
 
 export function Projects() {
   const { t } = useLanguage();
+
   return (
-    <div className={styles.container}>
-      <h3 className={styles.sectionTitle}>{t.projectsTitle}</h3>
-      <div className={styles.grid}>
-        {projects.map((project) => {
+    <section className={styles.sectionContainer} id="projects">
+      {/* Newspaper Section Banner */}
+      <div className={styles.sectionBanner}>
+        <div className={styles.bannerMeta}>
+          <span className={styles.pageNumber}>{t.newspaper.sectionProjects}</span>
+          <span className={styles.bannerTag}>PATENTS & TECHNICAL REGISTRY</span>
+        </div>
+        <h2 className={styles.sectionTitle}>{t.projectsTitle}</h2>
+      </div>
+
+      <div className={styles.projectsGrid}>
+        {projects.map((project, index) => {
           const text = t.projects[project.id];
+          const isFeatured = !!project.codeSnippet;
+
           return (
-            <motion.div
+            <article
               key={project.id}
-              className={`${styles.card} ${project.codeSnippet ? styles.featured : ""}`}
-              whileHover={{ y: -4 }}
-              transition={{ duration: 0.25, ease: "easeOut" }}
+              className={`${styles.projectCard} ${isFeatured ? styles.featuredCard : ""}`}
             >
               <div className={styles.cardContent}>
-                <div className={styles.header}>
-                  <span className={styles.category}>{text.category}</span>
-                  {text.badge && <span className={styles.badge}>{text.badge}</span>}
+                <div className={styles.cardMeta}>
+                  <span className={styles.categoryBadge}>
+                    FILE № 0{index + 1} · {text.category}
+                  </span>
+                  {text.badge && (
+                    <span className={styles.distinctionStamp}>{text.badge}</span>
+                  )}
                 </div>
 
-                <h3 className={styles.title}>{text.title}</h3>
-                <p className={styles.description}>{text.description}</p>
+                <h3 className={styles.projectTitle}>{text.title}</h3>
+                <p className={styles.projectDescription}>{text.description}</p>
 
-                <div className={styles.tags}>
+                <div className={styles.tagsContainer}>
                   {project.tags.map((tag) => (
-                    <span key={tag} className={styles.tag}>{tag}</span>
+                    <span key={tag} className={styles.patentTag}>
+                      {tag}
+                    </span>
                   ))}
                 </div>
               </div>
 
               {project.codeSnippet && (
-                <div className={styles.codeWrapper}>
+                <div className={styles.teletypeWrapper}>
+                  <div className={styles.teletypeHeader}>
+                    <span className={styles.teletypeLed} />
+                    <span className={styles.teletypeTitle}>
+                      {t.newspaper.teletypeTitle}
+                    </span>
+                  </div>
                   <pre className={styles.codeBlock}>
                     <code>{project.codeSnippet}</code>
                   </pre>
                 </div>
               )}
-            </motion.div>
+            </article>
           );
         })}
       </div>
-    </div>
+    </section>
   );
 }

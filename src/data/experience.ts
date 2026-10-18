@@ -8,12 +8,12 @@ export interface Experience {
 }
 
 export const experiences: Experience[] = [
-  { id: "hypefast", skills: ["Go", "TypeScript", "Python", "GCP Pub/Sub", "Terraform"] },
-  { id: "csl", skills: ["Python", "Kafka", "YOLOv8"] },
-  { id: "telkom", skills: ["Go", "PostgreSQL", "Jira"] },
+  { id: "hypefast", skills: ["Go", "PostgreSQL", "Cloud Tasks", "GCP Pub/Sub", "Terraform", "Docker"] },
+  { id: "csl", skills: ["Python", "Apache Kafka", "YOLOv8n", "Docker"] },
+  { id: "telkom", skills: ["Go", "PostgreSQL", "REST APIs", "Jira"] },
 ];
 
 export const leadershipExperiences: Experience[] = [
-  { id: "bangkit", skills: ["GCP", "Database Design"] },
-  { id: "compfest", skills: ["Docker Compose", "NGINX", "CTF"] },
+  { id: "bangkit", skills: ["GCP", "FastAPI", "TensorFlow", "Database Design"] },
+  { id: "compfest", skills: ["Docker Compose", "NGINX", "Load Balancing", "CTF"] },
 ];

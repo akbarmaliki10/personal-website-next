@@ -1,16 +1,40 @@
 .container {
-  margin-bottom: 0;
   width: 100%;
   overflow: hidden;
+  border-top: 2px solid var(--border-ink);
+  border-bottom: 1px solid var(--border-ink);
+  background-color: var(--news-ticker-bg);
+  padding: 0.6rem 0;
+  display: flex;
+  align-items: center;
 }
 
 .title {
-  font-size: 0.75rem;
+  flex-shrink: 0;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.72rem;
   font-weight: 700;
-  letter-spacing: 1px;
-  color: var(--text-secondary);
-  margin-bottom: 1rem;
+  letter-spacing: 1.5px;
+  color: var(--accent-red);
   text-transform: uppercase;
+  padding: 0.25rem 1rem;
+  border-right: 1px solid var(--border-color);
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.title::before {
+  content: "●";
+  font-size: 0.65rem;
+  color: var(--accent-red);
+  animation: blink 2s infinite ease-in-out;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
 }
 
 .marqueeWrapper {
@@ -18,8 +42,8 @@
   overflow: hidden;
   position: relative;
   width: 100%;
-  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 4%, black 96%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 4%, black 96%, transparent);
 }
 
 .marqueeContent {
@@ -32,15 +56,24 @@
 .stackItem {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 1.5rem;
-  font-size: 1rem;
-  font-weight: 500;
+  gap: 0.45rem;
+  padding: 0.2rem 1.25rem;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.8rem;
+  font-weight: 700;
   color: var(--text-primary);
+  border-right: 1px dotted var(--border-color);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
 }
 
 .icon {
-  color: var(--accent-blue);
+  color: var(--text-secondary);
   display: flex;
   align-items: center;
+}
+
+.icon svg {
+  width: 16px;
+  height: 16px;
 }

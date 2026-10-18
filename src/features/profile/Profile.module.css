@@ -1,128 +1,309 @@
-.profileContainer {
-  display: grid;
-  grid-template-columns: 160px 1fr;
-  column-gap: 2.5rem;
-  align-items: start;
-  justify-items: start;
-  text-align: left;
-  padding: 1rem 0;
+.leadArticle {
   width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
-.profileContainer > :not(.imageWrapper) {
-  grid-column: 2;
+.headerBlock {
+  padding-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
 }
 
-.imageWrapper {
-  grid-column: 1;
-  grid-row: 1 / span 4;
-  width: 160px;
-  height: 160px;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+.kicker {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--accent-red);
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+}
+
+.headline {
+  font-size: 2.75rem;
+  line-height: 1.1;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.5px;
+  text-wrap: balance;
+}
+
+.subhead {
+  font-size: 1.15rem;
+  line-height: 1.45;
+  color: var(--text-secondary);
+  font-style: italic;
+  margin-bottom: 1rem;
+  max-width: 880px;
+}
+
+.bylineBar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border-color);
+  padding-top: 0.6rem;
+}
+
+.byline {
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.dateline {
+  color: var(--text-muted);
+}
+
+/* 2-Column Broadsheet Layout */
+.storyGrid {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.storyCol {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.leadParagraph {
+  font-size: 1.1rem;
+  line-height: 1.75;
+  color: var(--text-primary);
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+/* Authentic Newspaper Drop Cap */
+.dropCap {
+  float: left;
+  font-family: var(--font-display), "Times New Roman", serif;
+  font-size: 4rem;
+  line-height: 0.8;
+  padding-top: 6px;
+  padding-right: 12px;
+  padding-bottom: 2px;
+  font-weight: 900;
+  color: var(--text-primary);
+}
+
+/* Editorial Pull Quote */
+.pullQuote {
+  border-top: 2px solid var(--border-ink);
+  border-bottom: 2px solid var(--border-ink);
+  padding: 1.25rem 0.5rem;
+  margin: 0.5rem 0;
+  text-align: center;
+}
+
+.pullQuote p {
+  font-family: var(--font-display), "Times New Roman", serif;
+  font-size: 1.35rem;
+  font-style: italic;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.35;
+  margin-bottom: 0.5rem;
+}
+
+.pullQuote cite {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  font-style: normal;
+}
+
+/* Executive Engineering Scorecard */
+.scorecardGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  padding: 0.85rem 0.25rem;
+  background: var(--newsprint-tint);
+}
+
+.scorecardCell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 0.4rem;
+  border-right: 1px solid var(--border-color);
+}
+
+.scorecardCell:last-child {
+  border-right: none;
+}
+
+.scorecardVal {
+  font-family: var(--font-display), "Times New Roman", serif;
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--accent-red);
+  line-height: 1;
+  margin-bottom: 0.35rem;
+}
+
+.scorecardLabel {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+/* Academic Degree Box */
+.academicBox {
+  border: 1px solid var(--border-color);
   background-color: var(--bg-card);
+  padding: 1rem 1.25rem;
+  border-left: 3px solid var(--accent-red);
+}
+
+.academicHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.35rem;
+}
+
+.academicIcon {
+  color: var(--accent-red);
+}
+
+.academicTitle {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--accent-red);
+  text-transform: uppercase;
+}
+
+.academicText {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* Right Media Column */
+.mediaCol {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.photoFigure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border-ink);
+  padding: 8px;
+  background-color: var(--bg-card);
+  box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.08);
+}
+
+.imageFrame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-primary);
 }
 
 .image {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  filter: contrast(1.05) grayscale(0.2);
+  transition: filter 0.3s ease;
 }
 
-@media (max-width: 640px) {
-  .profileContainer {
-    grid-template-columns: 1fr;
-    justify-items: center;
-    text-align: center;
-  }
-
-  .profileContainer > :not(.imageWrapper),
-  .imageWrapper {
-    grid-column: 1;
-    grid-row: auto;
-  }
-
-  .imageWrapper {
-    margin-bottom: 1.5rem;
-  }
+.image:hover {
+  filter: contrast(1.02) grayscale(0);
 }
 
-.name {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-}
-
-.bio {
+.photoCaption {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.7rem;
+  line-height: 1.4;
   color: var(--text-secondary);
-  font-size: 0.95rem;
-  line-height: 1.6;
-  max-width: 640px;
-  margin-bottom: 1.25rem;
+  padding-top: 8px;
+  text-align: left;
+  border-top: 1px solid var(--border-color);
+  margin-top: 6px;
 }
 
-.highlight {
-  color: var(--accent-blue);
-  font-weight: 500;
+/* Telegraphic Wire Directory Box */
+.wiresBox {
+  border: 1px dashed var(--border-ink);
+  padding: 1rem;
+  background-color: var(--bg-card);
 }
 
-.viewWorkBtn {
-  background-color: var(--accent-blue);
-  color: var(--btn-text);
-  border: none;
-  border-radius: 8px;
-  padding: 0.75rem 2rem;
-  font-weight: 600;
-  font-size: 1rem;
-  width: 100%;
-  cursor: pointer;
-  transition: background-color 0.2s, transform 0.2s;
-  margin-bottom: 1rem;
+.wiresTitle {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+  text-align: center;
+  border-bottom: 1px dotted var(--border-color);
+  padding-bottom: 0.4rem;
 }
 
-.viewWorkBtn:hover {
-  filter: brightness(1.1);
-  transform: translateY(-2px);
-}
-
-.socials {
+.wireLinks {
   display: flex;
-  gap: 1rem;
-  margin-bottom: 1.25rem;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-.socialBtn {
-  background-color: var(--border-color);
+.wireBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-primary);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
   color: var(--text-primary);
-  border: none;
-  border-radius: 8px;
-  width: 44px;
-  height: 44px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: background-color 0.2s;
+  transition: all 0.2s ease;
 }
 
-.socialBtn:hover {
-  background-color: var(--text-secondary);
+.wireBtn:hover {
+  background-color: var(--border-ink);
   color: var(--bg-primary);
+  border-color: var(--border-ink);
 }
 
-.education {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  background-color: var(--accent-blue-hover);
-  color: var(--accent-blue);
-  padding: 0.75rem 1.25rem;
-  border-radius: 8px;
-  font-size: 0.85rem;
-  font-weight: 500;
-}
-
-.eduIcon {
-  color: var(--accent-blue);
+@media (max-width: 900px) {
+  .headline {
+    font-size: 2rem;
+  }
+  .storyGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
 }

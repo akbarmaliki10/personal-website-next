@@ -1,124 +1,154 @@
-.section {
+.sectionContainer {
   width: 100%;
-  margin-top: 0;
+  margin-bottom: 3.5rem;
 }
 
-.title {
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 1px;
-  color: var(--text-secondary);
+/* Authentic Newspaper Section Banner */
+.sectionBanner {
+  border-top: 3px double var(--border-ink);
+  border-bottom: 1px solid var(--border-ink);
+  padding: 0.75rem 0 1rem;
   margin-bottom: 2rem;
+  text-align: center;
+}
+
+.bannerMeta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--accent-red);
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  line-height: 1.15;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.5px;
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+}
+
+.sectionSubtitle {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  font-style: italic;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* Multi-Column Newspaper Article Grid */
+.articleGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  align-items: stretch;
+}
+
+.articleCard {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0;
+  border-top: 1px solid var(--border-color);
+  position: relative;
+}
+
+.articleHeader {
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px dashed var(--border-color);
+}
+
+.articleKicker {
+  display: block;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  color: var(--accent-red);
+  text-transform: uppercase;
+  margin-bottom: 0.35rem;
+}
+
+.articleCompany {
+  font-size: 1.35rem;
+  line-height: 1.2;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.35rem;
+}
+
+.articleRoleDateline {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+}
+
+.articleRole {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.articlePeriod {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* Bullet list formatted as editorial dispatches */
+.bulletsList {
+  list-style: square;
+  padding-left: 1.25rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  flex: 1;
+}
+
+.bulletItem {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  text-align: justify;
+}
+
+.counter {
+  font-weight: 700;
+  color: var(--accent-red);
+}
+
+/* Newspaper Tech Tags */
+.techTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.techBadge {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 0.18rem 0.5rem;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-card);
+  color: var(--text-primary);
+  letter-spacing: 0.5px;
   text-transform: uppercase;
 }
 
-.timelineContainer {
-  position: relative;
-  display: flex;
-}
-
-.progressTrack {
-  position: absolute;
-  left: 5px;
-  top: 10px;
-  bottom: 0;
-  width: 2px;
-  background-color: var(--border-color);
-  z-index: 0;
-}
-
-.progressLine {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: var(--accent-blue);
-  transform-origin: top;
-}
-
-.cardsList {
-  display: flex;
-  flex-direction: column;
-  gap: 2.5rem;
-  width: 100%;
-}
-
-.card {
-  position: relative;
-  padding-left: 2rem;
-}
-
-.nodeWrapper {
-  position: absolute;
-  left: 0;
-  top: 0.4rem;
-  width: 12px;
-  height: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1;
-}
-
-.node {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: var(--bg-card);
-  border: 2px solid var(--accent-blue);
-}
-
-.period {
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: var(--accent-blue);
-  margin-bottom: 0.25rem;
-}
-
-.company {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 0.25rem;
-}
-
-.role {
-  font-size: 0.9rem;
-  color: var(--text-secondary);
-  margin-bottom: 0.75rem;
-}
-
-.description {
-  font-size: 0.9rem;
-  line-height: 1.6;
-  color: var(--text-secondary);
-  margin-bottom: 1rem;
-}
-
-.bullets {
-  list-style: disc;
-  padding-left: 1.1rem;
-  margin-bottom: 1rem;
-  font-size: 0.85rem;
-  line-height: 1.55;
-  color: var(--text-secondary);
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-}
-
-.skills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.skillBadge {
-  font-size: 0.75rem;
-  padding: 0.25rem 0.5rem;
-  background-color: var(--border-color);
-  color: var(--text-primary);
-  border-radius: 4px;
-  font-weight: 500;
+@media (min-width: 900px) {
+  .articleGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }

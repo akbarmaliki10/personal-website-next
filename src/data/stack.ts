@@ -1,18 +1,18 @@
 export interface StackItem {
   id: string;
   name: string;
-  iconName: string; // We'll map this to a Lucide icon or custom SVG
+  iconName: string;
 }
 
 export const stackItems: StackItem[] = [
+  { id: "go", name: "Go (Golang)", iconName: "Code2" },
   { id: "gcp", name: "Google Cloud Platform", iconName: "Cloud" },
-  { id: "go", name: "Go", iconName: "Code2" }, // Fallback icons
-  { id: "typescript", name: "TypeScript", iconName: "Code2" },
+  { id: "postgres", name: "PostgreSQL & CloudSQL", iconName: "Database" },
+  { id: "pubsub", name: "GCP Pub/Sub & Tasks", iconName: "Network" },
+  { id: "terraform", name: "Terraform (IaC)", iconName: "Box" },
   { id: "python", name: "Python", iconName: "Terminal" },
-  { id: "node", name: "Node.js", iconName: "Terminal" },
-  { id: "postgres", name: "PostgreSQL", iconName: "Database" },
-  { id: "kafka", name: "Kafka", iconName: "Network" },
-  { id: "docker", name: "Docker", iconName: "Box" },
-  { id: "k8s", name: "Kubernetes", iconName: "Cpu" },
-  { id: "terraform", name: "Terraform", iconName: "Box" },
+  { id: "kafka", name: "Apache Kafka", iconName: "Network" },
+  { id: "docker", name: "Docker & Containers", iconName: "Box" },
+  { id: "typescript", name: "TypeScript", iconName: "Code2" },
+  { id: "node", name: "Node.js & Next.js", iconName: "Terminal" },
 ];

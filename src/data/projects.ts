@@ -7,29 +7,43 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: "bulkOrder",
+    tags: ["Go", "Cloud Tasks", "PostgreSQL", "Terraform", "WMS API"],
+    codeSnippet: `// Phase 1: Enqueue async processing with Cloud Tasks
+task := &taskspb.CreateTaskRequest{
+    Parent: queuePath,
+    Task: &taskspb.Task{
+        MessageType: &taskspb.Task_HttpRequest{
+            HttpRequest: &taskspb.HttpRequest{
+                HttpMethod: taskspb.HttpMethod_POST,
+                Url:        "/api/v1/orders/process-bulk",
+                Body:       payload,
+            },
+        },
+    },
+}
+
+// Phase 2: Transactional lock & bulk SKU stock validation
+tx.Exec("SELECT id FROM order_import_requests WHERE id = $1 FOR UPDATE", reqID)
+err := validateStockAcrossSKUs(ctx, tx, parsedOrders)
+if err != nil {
+    return rollbackAndNotifyFailure(tx, reqID, err)
+}`,
+  },
+  {
+    id: "salesSystem",
+    tags: ["Go", "PostgreSQL", "Google Pub/Sub", "Terraform", "WMS API"],
+  },
+  {
+    id: "consignment",
+    tags: ["Go", "CloudSQL", "Google Pub/Sub", "Cloud Tasks", "Terraform"],
+  },
+  {
+    id: "customerHub",
+    tags: ["Go", "Cloud Run", "Google Pub/Sub", "Cloud Scheduler", "PostgreSQL"],
+  },
+  {
     id: "uav",
-    tags: ["YOLOv8", "Kafka", "Python"],
-    codeSnippet: `# Initializing stream
-producer = KafkaProducer(
-    bootstrap_servers='broker:9092'
-)
-
-# Processing YOLOv8 inference
-results = model(frame)
-bbox_data = extract_boxes(results)
-
-# Publishing to Kafka
-producer.send('uav-stream',
-    key=b'drone_1',
-    value=bbox_data
-)`,
-  },
-  {
-    id: "ajambeh",
-    tags: ["Node.js", "PostgreSQL"],
-  },
-  {
-    id: "bangkit",
-    tags: ["GCP Cloud Run", "FastAPI"],
+    tags: ["Python", "Apache Kafka", "YOLOv8n", "OpenCV", "Docker"],
   },
 ];

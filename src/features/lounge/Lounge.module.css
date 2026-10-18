@@ -1,101 +1,193 @@
-.container {
+.supplementSection {
   width: 100%;
-  padding: 4rem 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  padding: 3rem 0;
+  border-top: var(--border-double);
+  position: relative;
 }
 
-.sectionTitle {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 4rem;
-  color: var(--text-primary);
-}
-
-.grid {
-  display: flex;
-  flex-direction: column;
-  gap: 4rem;
-  width: 100%;
-}
-
-.itemGroup {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 4rem;
-  width: 100%;
-}
-
-.reverse {
-  flex-direction: row-reverse;
-}
-
-.textContent {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.supplementBanner {
   text-align: center;
-  width: 250px;
+  padding: 1.5rem 1rem 2rem;
+  border-bottom: 2px solid var(--border-color);
+  margin-bottom: 2.5rem;
+  background: var(--newsprint-tint);
+  border-left: var(--border-thick);
+  border-right: var(--border-thick);
 }
 
-.icon {
-  color: var(--accent-blue);
-  margin-bottom: 1rem;
-}
-
-.category {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 0.5rem;
-}
-
-.subtitle {
-  font-size: 0.9rem;
-  color: var(--text-secondary);
-}
-
-.imageGrid {
+.bannerKicker {
   display: flex;
+  justify-content: center;
   gap: 1.5rem;
-}
-
-.imageCard {
-  position: relative;
-  width: 200px;
-  height: 250px;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-}
-
-.imagePlaceholder {
-  width: 100%;
-  height: 100%;
-  position: relative;
-}
-
-.imageName {
-  position: absolute;
-  bottom: 1rem;
-  left: 1rem;
-  color: white;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent-red);
+  margin-bottom: 0.6rem;
   font-weight: 700;
-  font-size: 0.9rem;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.8);
 }
 
-@media (max-width: 1024px) {
-  .itemGroup, .reverse {
-    flex-direction: column;
-    gap: 2rem;
+.bannerTitle {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  color: var(--ink-black);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.bannerSubtitle {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--ink-secondary);
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.comicsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  width: 100%;
+}
+
+.comicPanel {
+  background: var(--bg-primary);
+  border: var(--border-newspaper);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 4px 4px 0px var(--border-color);
+  position: relative;
+}
+
+.panelHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 1.25rem;
+}
+
+.panelTitleGroup {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.comicIcon {
+  color: var(--ink-black);
+}
+
+.panelCategory {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink-black);
+}
+
+.panelSubtitle {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--ink-muted);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.stripFrames {
+  display: flex;
+  gap: 1.25rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.frameCard {
+  flex: 1;
+  min-width: 180px;
+  max-width: 240px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-secondary);
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.frameCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+}
+
+.frameInner {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  background: var(--bg-secondary);
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+}
+
+.comicImage {
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.frameCard:hover .comicImage {
+  transform: scale(1.05);
+}
+
+.frameCaption {
+  margin-top: 0.65rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  text-align: center;
+}
+
+.captionTag {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-red);
+  font-weight: 700;
+}
+
+.captionTitle {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--ink-black);
+}
+
+@media (max-width: 900px) {
+  .comicsGrid {
+    grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 600px) {
-  .imageGrid {
+  .supplementBanner {
+    padding: 1rem 0.5rem;
+  }
+  .bannerKicker {
     flex-direction: column;
+    gap: 0.25rem;
+  }
+  .stripFrames {
+    flex-direction: column;
+    align-items: center;
+  }
+  .frameCard {
+    width: 100%;
+    max-width: 280px;
   }
 }

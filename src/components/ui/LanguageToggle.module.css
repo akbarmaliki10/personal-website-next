@@ -1,17 +1,11 @@
 .group {
   position: relative;
   display: inline-flex;
-  padding: 4px;
+  padding: 2px;
   gap: 2px;
-  border-radius: 999px;
-  background: var(--glass-bg);
-  border: 1px solid var(--glass-border);
-  backdrop-filter: blur(18px) saturate(180%);
-  -webkit-backdrop-filter: blur(18px) saturate(180%);
-  box-shadow:
-    var(--glass-shadow),
-    inset 0 1px 0 var(--glass-border),
-    inset 0 -1px 0 var(--glass-edge);
+  border: 1px solid var(--border-ink);
+  background: var(--bg-card);
+  font-family: var(--font-mono), monospace;
 }
 
 .option {
@@ -20,34 +14,23 @@
   border: none;
   cursor: pointer;
   color: var(--text-secondary);
-  font-size: 0.7rem;
+  font-size: 0.72rem;
   font-weight: 700;
-  letter-spacing: 0.5px;
-  padding: 0.35rem 0.7rem;
-  border-radius: 999px;
-  transition: color 0.25s ease, transform 0.2s ease;
+  letter-spacing: 0.75px;
+  padding: 0.3rem 0.65rem;
+  transition: color 0.2s ease;
+  font-family: inherit;
 }
 
 .option:hover {
   color: var(--text-primary);
 }
 
-.option:active {
-  transform: scale(0.94);
-}
-
-/* The sliding "liquid" thumb */
+/* Authentic newsprint letterpress stamp */
 .pill {
   position: absolute;
   inset: 0;
-  border-radius: 999px;
-  background: var(--glass-thumb);
-  backdrop-filter: blur(6px) saturate(160%);
-  -webkit-backdrop-filter: blur(6px) saturate(160%);
-  box-shadow:
-    0 2px 8px rgba(0, 0, 0, 0.18),
-    inset 0 1px 1px rgba(255, 255, 255, 0.8),
-    inset 0 -1px 2px rgba(255, 255, 255, 0.15);
+  background: var(--border-ink);
 }
 
 .label {
@@ -57,5 +40,5 @@
 
 .active,
 .active:hover {
-  color: var(--glass-thumb-text);
+  color: var(--bg-primary);
 }

@@ -1,52 +1,39 @@
 .toggleButton {
   position: relative;
-  width: 62px;
-  height: 34px;
-  border-radius: 999px;
+  width: 58px;
+  height: 30px;
+  padding: 0 8px;
+  border: 1px solid var(--border-ink);
+  background: var(--bg-card);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 10px;
-  background: var(--glass-bg);
-  border: 1px solid var(--glass-border);
-  backdrop-filter: blur(18px) saturate(180%);
-  -webkit-backdrop-filter: blur(18px) saturate(180%);
-  box-shadow:
-    var(--glass-shadow),
-    inset 0 1px 0 var(--glass-border),
-    inset 0 -1px 0 var(--glass-edge);
-  transition: transform 0.2s ease;
+  border-radius: 2px;
+  transition: background-color 0.2s ease;
 }
 
-.toggleButton:active {
-  transform: scale(0.96);
+.toggleButton:hover {
+  background-color: var(--bg-contrast);
 }
 
 .trackIcon {
-  color: var(--text-secondary);
-  opacity: 0.75;
+  color: var(--text-muted);
+  opacity: 0.8;
 }
 
-/* Glass bubble knob */
 .knob {
   position: absolute;
   top: 3px;
   left: 3px;
-  width: 26px;
-  height: 26px;
-  border-radius: 50%;
-  background: var(--glass-thumb);
-  color: var(--glass-thumb-text);
+  width: 22px;
+  height: 22px;
+  background: var(--border-ink);
+  color: var(--bg-primary);
   display: flex;
   align-items: center;
   justify-content: center;
-  backdrop-filter: blur(6px) saturate(160%);
-  -webkit-backdrop-filter: blur(6px) saturate(160%);
-  box-shadow:
-    0 2px 8px rgba(0, 0, 0, 0.22),
-    inset 0 1px 1px rgba(255, 255, 255, 0.85),
-    inset 0 -2px 3px rgba(255, 255, 255, 0.12);
+  border-radius: 1px;
 }
 
 .knobIcon {
@@ -54,6 +41,6 @@
 }
 
 .togglePlaceholder {
-  width: 62px;
-  height: 34px;
+  width: 58px;
+  height: 30px;
 }
