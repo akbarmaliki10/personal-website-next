@@ -40,4 +40,10 @@ producer.send('uav-stream',
     url: "https://port.akbarmaliki.com",
     imageUrl: "/images/port-akbarmaliki.png",
   },
+  {
+    id: "jlptSrs",
+    tags: ["React", "TypeScript", "Vite", "WanaKana", "Vercel Blob"],
+    url: "https://jlpt.akbarmaliki.com",
+    imageUrl: "/images/jlpt-akbarmaliki.png",
+  },
 ];

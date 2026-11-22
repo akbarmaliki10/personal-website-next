@@ -162,6 +162,13 @@ const en: Dictionary = {
         "Custom URL shortener styled as an animated pixel-art harbor connecting long destination URLs (Port A) to custom short slugs (Port B). Built with Express, MongoDB Atlas, EJS, signed cookie flash alerts, strict HTTP/HTTPS validation, and serverless deployment on Vercel.",
       badge: "LIVE WEB APP",
     },
+    jlptSrs: {
+      category: "LANGUAGE LEARNING & SRS",
+      title: "Jlpt.akbarmaliki.com — JLPT N4 Daily Kanji & Vocab SRS",
+      description:
+        "Personal spaced-repetition study app for JLPT N4 kanji and vocabulary with live romaji-to-kana input (WanaKana), a 9-stage WaniKani-style SRS schedule, +2-turn mistake re-queueing, Japanese TTS pronunciation, light/dark themes, password-protected serverless APIs, and Vercel Blob persistence.",
+      badge: "LIVE WEB APP",
+    },
   },
   lounge: {
     title: "Hobbies",
@@ -286,6 +293,13 @@ const id: Dictionary = {
         "Layanan pemendek URL kustom bertema pelabuhan pixel-art beranimasi yang menghubungkan URL tujuan panjang (Port A) ke slug pendek kustom (Port B). Dibangun dengan Express, MongoDB Atlas, EJS, flash cookie bertanda tangan, validasi HTTP/HTTPS ketat, dan deployment serverless di Vercel.",
       badge: "APLIKASI AKTIF",
     },
+    jlptSrs: {
+      category: "PEMBELAJARAN BAHASA & SRS",
+      title: "Jlpt.akbarmaliki.com — Aplikasi SRS Kanji & Kosakata JLPT N4",
+      description:
+        "Aplikasi latihan harian spaced-repetition untuk kanji dan kosakata JLPT N4 dengan konversi romaji ke kana secara langsung (WanaKana), jadwal SRS 9 tahap bergaya WaniKani, pengulangan soal salah 2 giliran kemudian, pelafalan suara Jepang (TTS), mode terang/gelap, autentikasi kata sandi serverless, dan penyimpanan Vercel Blob.",
+      badge: "APLIKASI AKTIF",
+    },
   },
   lounge: {
     title: "Hobi",
@@ -408,6 +422,13 @@ const ja: Dictionary = {
       title: "Port.akbarmaliki.com — ピクセル港湾URL短縮サービス",
       description:
         "長い遷移先URL（Port A）とカスタム短縮スラッグ（Port B）を結ぶ、アニメーション付きピクセルアート港湾テーマのURL短縮サービス。Express、MongoDB Atlas、EJS、署名付きCookie通知、厳格なHTTP/HTTPS検証、Vercelサーバーレス構成で構築しました。",
+      badge: "公開中WEBアプリ",
+    },
+    jlptSrs: {
+      category: "語学学習 & SRS",
+      title: "Jlpt.akbarmaliki.com — JLPT N4 漢字・語彙デイリーSRS",
+      description:
+        "JLPT N4の漢字・語彙を毎日学習するための間隔反復（SRS）アプリ。WanaKanaによるリアルタイムのローマ字→かな変換、9段階の復習スケジュール、誤答カードの2ターン後再出題、日本語音声読み上げ（TTS）、ライト/ダーク切替、パスワード認証付きサーバーレスAPI、Vercel Blob永続化を実装しました。",
       badge: "公開中WEBアプリ",
     },
   },
