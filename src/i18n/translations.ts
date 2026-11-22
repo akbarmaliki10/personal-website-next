@@ -47,6 +47,7 @@ export interface NewspaperHeader {
   sectionHobbies: string;
   wireLinks: { github: string; linkedin: string; email: string };
   teletypeTitle: string;
+  visitProject: string;
   metricDefects: string;
   metricOnTime: string;
   metricRating: string;
@@ -207,6 +208,13 @@ const en: Dictionary = {
       description:
         "Real-time multi-drone video streaming and human detection pipeline using Apache Kafka (FogVerse framework) and YOLOv8n. Achieved under 0.5s average streaming latency and higher FPS than existing state-of-the-art benchmarks in resource-constrained environments.",
     },
+    portLink: {
+      category: "WEB UTILITY & PIXEL UI",
+      title: "Port.akbarmaliki.com — Pixel Harbor URL Shortener",
+      badge: "LIVE WEB APP",
+      description:
+        "Custom URL shortener styled as an animated pixel-art harbor connecting long destination URLs (Port A) to custom short slugs (Port B). Built with Express, MongoDB Atlas (Mongoose), EJS, signed cookie flash alerts, strict HTTP/HTTPS validation, and serverless deployment on Vercel.",
+    },
   },
   lounge: {
     title: "Sunday Comics & Amusements",
@@ -242,6 +250,7 @@ const en: Dictionary = {
     sectionHobbies: "THE SUNDAY SUPPLEMENT — COMICS & AMUSEMENTS",
     wireLinks: { github: "TELEGRAPH / GITHUB", linkedin: "WIRE / LINKEDIN", email: "DIRECT DISPATCH" },
     teletypeTitle: "TELETYPE LOG · CLOUD TASKS ASYNC PIPELINE",
+    visitProject: "VISIT LIVE SITE",
     metricDefects: "CRITICAL DEFECTS ON RELEASES",
     metricOnTime: "1-YEAR ON-TIME DELIVERY",
     metricRating: "CONSECUTIVE EXCEEDS EXPECTATIONS",
@@ -375,6 +384,13 @@ const id: Dictionary = {
       description:
         "Pipeline streaming video multi-drone real-time dan deteksi manusia menggunakan Apache Kafka (framework FogVerse) dan YOLOv8n. Mencapai latensi rata-rata di bawah 0,5 detik serta FPS yang lebih stabil dibanding benchmark state-of-the-art di lingkungan jaringan terbatas.",
     },
+    portLink: {
+      category: "UTILITAS WEB & PIXEL UI",
+      title: "Port.akbarmaliki.com — Pemendek URL Pelabuhan Piksel",
+      badge: "APLIKASI WEB AKTIF",
+      description:
+        "Layanan pemendek URL kustom bertema pelabuhan pixel-art beranimasi yang menghubungkan URL tujuan panjang (Port A) ke slug pendek kustom (Port B). Dibangun dengan Express, MongoDB Atlas (Mongoose), EJS, flash cookie bertanda tangan, validasi HTTP/HTTPS ketat, dan deployment serverless di Vercel.",
+    },
   },
   lounge: {
     title: "Suplemen Minggu & Hiburan",
@@ -410,6 +426,7 @@ const id: Dictionary = {
     sectionHobbies: "SUPLEMEN MINGGU — KOMIK & HIBURAN",
     wireLinks: { github: "TELEGRAF / GITHUB", linkedin: "KABEL WARTA / LINKEDIN", email: "SURAT LANGSUNG" },
     teletypeTitle: "CATATAN TELETIK · PIPELINE ASINKRON CLOUD TASKS",
+    visitProject: "BUKA SITUS LANGSUNG",
     metricDefects: "CACAT KRITIS PADA RILIS",
     metricOnTime: "PENGIRIMAN 1 TAHUN TEPAT WAKTU",
     metricRating: "PREDIKAT EXCEEDS EXPECTATIONS",
@@ -543,6 +560,13 @@ const ja: Dictionary = {
       description:
         "災害被災地を想定し、複数ドローンからのリアルタイム映像配信とYOLOv8n深層学習による遭難者検知システムを構築。KafkaによるPub/Sub分散パイプラインにより、平均0.5秒未満の低遅延かつ高安定FPSを実証。",
     },
+    portLink: {
+      category: "WEBユーティリティ & ピクセルUI",
+      title: "Port.akbarmaliki.com — ピクセル港湾URL短縮サービス",
+      badge: "公開中WEBアプリ",
+      description:
+        "長い遷移先URL（Port A）とカスタム短縮スラッグ（Port B）を結ぶ、アニメーション付きピクセルアート港湾テーマのURL短縮サービス。Express、MongoDB Atlas（Mongoose）、EJS、署名付きCookie通知、厳格なHTTP/HTTPS検証、Vercelサーバーレス構成で構築。",
+    },
   },
   lounge: {
     title: "日曜付録・娯楽欄",
@@ -578,6 +602,7 @@ const ja: Dictionary = {
     sectionHobbies: "日曜付録 — 漫画・娯楽選集",
     wireLinks: { github: "電報 / GITHUB", linkedin: "有線 / LINKEDIN", email: "直行電書" },
     teletypeTitle: "電信受信記録 · CLOUD TASKS 非同期パイプライン",
+    visitProject: "公開サイトを開く",
     metricDefects: "本番リリース時の重大不具合",
     metricOnTime: "1年間の納期遵守率（遅延ゼロ）",
     metricRating: "2期連続 最高評価「期待以上」",

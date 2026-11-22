@@ -111,6 +111,18 @@
   margin-bottom: 0.85rem;
 }
 
+.titleLink {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.titleLink:hover {
+  color: var(--accent-red);
+  border-bottom-color: var(--accent-red);
+}
+
 .projectDescription {
   font-size: 0.95rem;
   line-height: 1.65;
@@ -120,12 +132,43 @@
   text-align: justify;
 }
 
+.cardFooter {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
 .tagsContainer {
   display: flex;
   flex-wrap: wrap;
   gap: 0.4rem;
   padding-top: 0.75rem;
   border-top: 1px solid var(--border-color);
+}
+
+.visitLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  align-self: flex-start;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--bg-card);
+  background-color: var(--text-primary);
+  border: 1px solid var(--border-ink);
+  padding: 0.45rem 0.85rem;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.visitLink:hover {
+  background-color: var(--accent-red);
+  border-color: var(--accent-red);
+  color: #ffffff;
+  transform: translateY(-1px);
 }
 
 .patentTag {
@@ -184,6 +227,46 @@
   line-height: 1.6;
   white-space: pre-wrap;
   color: #E2E8F0;
+}
+
+/* Newspaper Pictorial Screenshot Plate */
+.previewFigure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.previewFrame {
+  display: block;
+  border: 2px solid var(--border-ink);
+  padding: 4px;
+  background-color: var(--bg-primary);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.previewFrame:hover {
+  transform: translateY(-2px);
+  box-shadow: 4px 4px 0px var(--border-ink);
+}
+
+.previewImage {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.previewCaption {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--text-secondary);
 }
 
 @media (max-width: 900px) {

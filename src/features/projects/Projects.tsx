@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+import { ExternalLink } from "lucide-react";
 import { projects } from "@/data/projects";
 import { useLanguage } from "@/components/LanguageProvider";
 import styles from "./Projects.module.css";
@@ -21,7 +23,7 @@ export function Projects() {
       <div className={styles.projectsGrid}>
         {projects.map((project, index) => {
           const text = t.projects[project.id];
-          const isFeatured = !!project.codeSnippet;
+          const isFeatured = Boolean(project.codeSnippet || project.imageUrl);
 
           return (
             <article
@@ -38,15 +40,42 @@ export function Projects() {
                   )}
                 </div>
 
-                <h3 className={styles.projectTitle}>{text.title}</h3>
+                <h3 className={styles.projectTitle}>
+                  {project.url ? (
+                    <a
+                      href={project.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles.titleLink}
+                    >
+                      {text.title}
+                    </a>
+                  ) : (
+                    text.title
+                  )}
+                </h3>
                 <p className={styles.projectDescription}>{text.description}</p>
 
-                <div className={styles.tagsContainer}>
-                  {project.tags.map((tag) => (
-                    <span key={tag} className={styles.patentTag}>
-                      {tag}
-                    </span>
-                  ))}
+                <div className={styles.cardFooter}>
+                  <div className={styles.tagsContainer}>
+                    {project.tags.map((tag) => (
+                      <span key={tag} className={styles.patentTag}>
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  {project.url && (
+                    <a
+                      href={project.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles.visitLink}
+                    >
+                      <span>{t.newspaper.visitProject}</span>
+                      <ExternalLink size={13} />
+                    </a>
+                  )}
                 </div>
               </div>
 
@@ -62,6 +91,30 @@ export function Projects() {
                     <code>{project.codeSnippet}</code>
                   </pre>
                 </div>
+              )}
+
+              {project.imageUrl && (
+                <figure className={styles.previewFigure}>
+                  <a
+                    href={project.url || "#"}
+                    target={project.url ? "_blank" : undefined}
+                    rel={project.url ? "noopener noreferrer" : undefined}
+                    className={styles.previewFrame}
+                  >
+                    <Image
+                      src={project.imageUrl}
+                      alt={text.title}
+                      width={1280}
+                      height={760}
+                      sizes="(max-width: 900px) 100vw, 480px"
+                      className={styles.previewImage}
+                    />
+                  </a>
+                  <figcaption className={styles.previewCaption}>
+                    <span>FIG. 0{index + 1}</span>
+                    <span>{project.url?.replace(/^https?:\/\//, "")}</span>
+                  </figcaption>
+                </figure>
               )}
             </article>
           );

@@ -3,6 +3,8 @@ export interface Project {
   id: string;
   tags: string[];
   codeSnippet?: string;
+  url?: string;
+  imageUrl?: string;
 }
 
 export const projects: Project[] = [
@@ -45,5 +47,11 @@ if err != nil {
   {
     id: "uav",
     tags: ["Python", "Apache Kafka", "YOLOv8n", "OpenCV", "Docker"],
+  },
+  {
+    id: "portLink",
+    tags: ["Node.js", "Express", "MongoDB", "EJS", "Vercel"],
+    url: "https://port.akbarmaliki.com",
+    imageUrl: "/images/port-akbarmaliki.png",
   },
 ];
