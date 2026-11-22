@@ -40,6 +40,7 @@ export interface Dictionary {
   };
   stackTitle: string;
   projectsTitle: string;
+  visitProject: string;
   projects: Record<string, ProjectText>;
   lounge: {
     title: string;
@@ -133,6 +134,7 @@ const en: Dictionary = {
   },
   stackTitle: "TECHNICAL STACK",
   projectsTitle: "PROJECTS",
+  visitProject: "Visit Live Site",
   projects: {
     uav: {
       category: "DISTRIBUTED SYSTEMS",
@@ -152,6 +154,13 @@ const en: Dictionary = {
       description:
         "Designed and deployed scalable API endpoints serving machine learning models for the final capstone project at Bangkit Academy.",
       badge: "DISTINCTION (TOP 500)",
+    },
+    portLink: {
+      category: "WEB UTILITY & PIXEL UI",
+      title: "Port.akbarmaliki.com — Pixel Harbor URL Shortener",
+      description:
+        "Custom URL shortener styled as an animated pixel-art harbor connecting long destination URLs (Port A) to custom short slugs (Port B). Built with Express, MongoDB Atlas, EJS, signed cookie flash alerts, strict HTTP/HTTPS validation, and serverless deployment on Vercel.",
+      badge: "LIVE WEB APP",
     },
   },
   lounge: {
@@ -249,6 +258,7 @@ const id: Dictionary = {
   },
   stackTitle: "TECH STACK",
   projectsTitle: "PROYEK",
+  visitProject: "Buka Situs",
   projects: {
     uav: {
       category: "SISTEM TERDISTRIBUSI",
@@ -268,6 +278,13 @@ const id: Dictionary = {
       description:
         "Merancang dan men-deploy endpoint API skalabel yang melayani model machine learning untuk proyek capstone akhir di Bangkit Academy.",
       badge: "DISTINCTION (TOP 500)",
+    },
+    portLink: {
+      category: "UTILITAS WEB & PIXEL UI",
+      title: "Port.akbarmaliki.com — Pemendek URL Pelabuhan Piksel",
+      description:
+        "Layanan pemendek URL kustom bertema pelabuhan pixel-art beranimasi yang menghubungkan URL tujuan panjang (Port A) ke slug pendek kustom (Port B). Dibangun dengan Express, MongoDB Atlas, EJS, flash cookie bertanda tangan, validasi HTTP/HTTPS ketat, dan deployment serverless di Vercel.",
+      badge: "APLIKASI AKTIF",
     },
   },
   lounge: {
@@ -365,6 +382,7 @@ const ja: Dictionary = {
   },
   stackTitle: "技術スタック",
   projectsTitle: "プロジェクト",
+  visitProject: "公開サイトを開く",
   projects: {
     uav: {
       category: "分散システム",
@@ -384,6 +402,13 @@ const ja: Dictionary = {
       description:
         "Bangkit Academyの最終キャップストーンプロジェクトとして、機械学習モデルを提供するスケーラブルなAPIエンドポイントを設計・デプロイしました。",
       badge: "優等(上位500名)",
+    },
+    portLink: {
+      category: "WEBユーティリティ & ピクセルUI",
+      title: "Port.akbarmaliki.com — ピクセル港湾URL短縮サービス",
+      description:
+        "長い遷移先URL（Port A）とカスタム短縮スラッグ（Port B）を結ぶ、アニメーション付きピクセルアート港湾テーマのURL短縮サービス。Express、MongoDB Atlas、EJS、署名付きCookie通知、厳格なHTTP/HTTPS検証、Vercelサーバーレス構成で構築しました。",
+      badge: "公開中WEBアプリ",
     },
   },
   lounge: {

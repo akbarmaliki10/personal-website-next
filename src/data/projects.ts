@@ -3,6 +3,8 @@ export interface Project {
   id: string;
   tags: string[];
   codeSnippet?: string;
+  url?: string;
+  imageUrl?: string;
 }
 
 export const projects: Project[] = [
@@ -31,5 +33,11 @@ producer.send('uav-stream',
   {
     id: "bangkit",
     tags: ["GCP Cloud Run", "FastAPI"],
+  },
+  {
+    id: "portLink",
+    tags: ["Node.js", "Express", "MongoDB", "EJS", "Vercel"],
+    url: "https://port.akbarmaliki.com",
+    imageUrl: "/images/port-akbarmaliki.png",
   },
 ];
